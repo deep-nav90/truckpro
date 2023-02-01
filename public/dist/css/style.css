@@ -1,0 +1,11 @@
+.d-none{
+    display: none;
+}
+.pan_card_no
+{
+    text-transform: uppercase;
+}
+.error{
+    color:red;
+    display: none;
+}
