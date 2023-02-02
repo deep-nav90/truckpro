@@ -5,6 +5,8 @@ use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\TruckController;
 use App\Http\Controllers\TruckDriverController;
 use App\Http\Controllers\CommonController;
+use App\Http\Controllers\GRRegistrationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,6 +66,11 @@ Route::group(['prefix' => 'driver' ], function () {
     Route::get('/delete_driver', [TruckDriverController::class, 'destroy'])->name('delete_driver');
     Route::post('/driver-status/{id?}', [TruckDriverController::class, 'updateStatus'])->name('admin.driver.driver-statuss');
     Route::get('/show/{id?}', [TruckDriverController::class, 'show'])->name('admin.driver.show');
+});
+Route::group(['prefix' => 'gr-register' ], function () {
+    Route::get('/', [GRRegistrationController::class, 'index'])->name('admin.gr-register.index');
+    Route::get('/create', [GRRegistrationController::class, 'create'])->name('admin.gr-register.index');
+    Route::Post('/store', [GRRegistrationController::class, 'store'])->name('admin.gr-register.store');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
