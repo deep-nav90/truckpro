@@ -31,8 +31,26 @@
           <!-- /.card-header -->
           <div class="card-body">
            
-            <form class="sellfformtruck"  method="POST" action="{{route('gr-register.store')}}" enctype="multipart/form-data" id="sellfformtruck">
+            <form class="sellfformtruck"  method="POST"  enctype="multipart/form-data" id="grregistrationForm">
                 @csrf
+
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Select GR Type</label>
+                      <select class="form-control select2" id="gr_type" style="width: 100%;">
+                        <option value="0">Select Type</option>
+                        <option value="1">Depo</option>
+                        <option value="2">DD</option>
+                      
+                      </select>
+                    </div>
+                  
+                  </div>
+          
+                </div>
+
             <div class="row card-footer mb-3">
                 <div class="col-md-4">
                   <div class="form-group">

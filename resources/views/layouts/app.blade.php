@@ -230,8 +230,49 @@
                   <p>Add Transport</p>
                 </a>
               </li>
+
+              <!-- <li class="nav-item">
+                <a href="{{route('admin.gr-register.index')}}" class="nav-link">
+                  <i class="fa fa-registered" aria-hidden="true"></i>
+                  <p>GR Registration</p>
+                </a>
+              </li> -->
+
             </ul>
           </li>
+
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-asterisk"></i>
+              <p>
+                GR Registration
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.gr-register.hulTone')}}" class="nav-link">
+                  <i class="fa fa-balance-scale"></i>
+                  <p>Hul Tone</p>
+                </a>
+              </li>
+             
+            </ul>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.gr-register.index')}}" class="nav-link">
+                  <i class="fa fa-registered"></i>
+                  <p>GR Listing</p>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
+
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-tree"></i>
@@ -329,6 +370,7 @@
 <!-- DataTables -->
 <script src="{{ asset('plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.js') }}"></script>
+@yield('js')
 <script>
   function onlyNumberKey(evt) {
         
