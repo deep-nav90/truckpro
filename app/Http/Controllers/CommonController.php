@@ -31,7 +31,7 @@ class CommonController extends Controller
      
         if($truck_no == "0")
         {
-            return "empty";
+             return "empty";
         }
         else{
             
