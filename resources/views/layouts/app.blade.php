@@ -263,6 +263,17 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="{{route('admin.gr-register.claimPenalty')}}" class="nav-link">
+                  <i class="fa fa-money"></i>
+                  <p>Claim/Penalty</p>
+                </a>
+              </li>
+             
+            </ul>
+
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
                 <a href="{{route('admin.gr-register.index')}}" class="nav-link">
                   <i class="fa fa-registered"></i>
                   <p>GR Listing</p>

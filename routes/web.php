@@ -72,17 +72,18 @@ Route::group(['prefix' => 'gr-register' ], function () {
     Route::match(['GET','POST'],'/store', [GRRegistrationController::class, 'store'])->name('admin.gr-register.store');
     Route::match(['GET','POST'],'/edit/{id}', [GRRegistrationController::class, 'edit'])->name('admin.gr-register.edit');
     Route::match(['GET','POST'],'/view/{id}', [GRRegistrationController::class, 'view'])->name('admin.gr-register.view');
+    Route::post('find-hultone-according-to-quantity',[GRRegistrationController::class,'findHultoneAccordingToQuantity'])->name('admin.gr-register.findHultoneAccordingToQuantity');
 
 
     Route::match(['GET','POST'],'/hul-ton', [GRRegistrationController::class, 'hulTone'])->name('admin.gr-register.hulTone');
     Route::match(['GET','POST'],'/store-hul-tone', [GRRegistrationController::class, 'storeHulTone'])->name('admin.gr-register.storeHulTone');
     Route::post('check-exist-hul-tone', [GRRegistrationController::class, 'checkExistsHulTone'])->name('admin.gr-register.checkExistsHulTone');
-    Route::match(['GET','POST'],'/edit-hul-tone', [GRRegistrationController::class, 'editHulTone'])->name('admin.gr-register.editHulTone');
+    Route::post('check-tone-serial-number', [GRRegistrationController::class, 'checkToneSerialNumber'])->name('admin.gr-register.checkToneSerialNumber');
+    Route::match(['GET','POST'],'/edit-hul-tone/{id?}', [GRRegistrationController::class, 'editHulTone'])->name('admin.gr-register.editHulTone');
+    Route::post('delete-hul-tone',[GRRegistrationController::class,'deleteHulTone'])->name('admin.gr-register.deleteHulTone');
 
-    Route::match(['GET','POST'],'/claim', [GRRegistrationController::class, 'claim'])->name('admin.gr-register.claim');
-    Route::match(['GET','POST'],'/store-claim', [GRRegistrationController::class, 'storeClaim'])->name('admin.gr-register.storeClaim');
-    Route::post('check-exist-claim', [GRRegistrationController::class, 'checkExistsClaim'])->name('admin.gr-register.checkExistsClaim');
-    Route::match(['GET','POST'],'/edit-claim', [GRRegistrationController::class, 'editClaim'])->name('admin.gr-register.editClaim');
+    Route::match(['GET','POST'],'/claim-penalty', [GRRegistrationController::class, 'claimPenalty'])->name('admin.gr-register.claimPenalty');
+    
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
