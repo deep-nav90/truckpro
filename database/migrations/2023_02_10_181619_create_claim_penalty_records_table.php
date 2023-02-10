@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTonesTable extends Migration
+class CreateClaimPenaltyRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateTonesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tones', function (Blueprint $table) {
+        Schema::create('claim_penalty_records', function (Blueprint $table) {
             $table->id();
-            $table->string('tone_serial_number');
-            $table->string('hul_tone');
-            $table->double('maximum_quantity')->dafault(0);
-            $table->double('price')->default(0);
+            $table->double('claim_price_per_day')->default(0);
+            $table->double('penalty_price_per_day')->default(0);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateTonesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tones');
+        Schema::dropIfExists('claim_penalty_records');
     }
 }

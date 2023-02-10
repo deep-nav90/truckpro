@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="{{ asset('plugins/iCheck/square/blue.css') }}">
   <link href="<?= asset('plugins/sweetalert/sweetalert.css') ?>" rel="stylesheet">
        <link href="<?= asset('main/css/style.css') ?>" rel="stylesheet">
+
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <script src="{{ asset('plugins/jquery/jquery.min.js') }}" ></script>
@@ -32,6 +35,9 @@
 <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
 <!-- <script src="{{ asset('main/js/custom.min.js') }}"></script> -->
 <script src="{{ asset('plugins/sweetalert/sweetalert.min.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
 <script type="text/javascript">
 function  start_loader(){
     $('.loader').show();

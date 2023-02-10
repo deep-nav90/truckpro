@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add Hul Tone</h1>
+            <h1>Edit Hul Tone</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Add Hul Tone</li>
+              <li class="breadcrumb-item active">Edit Hul Tone</li>
             </ol>
           </div>
         </div>
@@ -25,7 +25,7 @@
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Add Hul Tone</h3>
+            <h3 class="card-title">Edit Hul Tone</h3>
 
           </div>
           <!-- /.card-header -->
@@ -42,14 +42,14 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Tone Sr. No.</label>
-                        <input type="text" name="tone_serial_number" maxlength="10" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="tone_serial_number" value = "{{$find_hul_tone->tone_serial_number}}" maxlength="10" class="form-control" placeholder="Enter ...">
                     </div>
                 </div>
                 <div class="col-md-4">
                     
                     <div class="form-group">
                       <label>Hul Tone</label>
-                        <input type="text" maxlength="3" name="hul_tone" class="form-control only-numeric" placeholder="Enter ...">
+                        <input type="text" maxlength="3" name="hul_tone" value = "{{$find_hul_tone->hul_tone}}" class="form-control only-numeric" placeholder="Enter ...">
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                     
                     <div class="form-group">
                       <label>Price</label>
-                        <input type="text" maxlength="6" name="price" class="form-control only-numeric" placeholder="Enter ...">
+                        <input type="text" maxlength="6" name="price" value="{{$find_hul_tone->price}}" class="form-control only-numeric" placeholder="Enter ...">
                     </div>
                 </div>
                 
@@ -124,6 +124,7 @@
           type:"POST",
           data: {
             hul_tone: argument,
+            id : "{{$find_hul_tone->id}}",
             '_token': "{{csrf_token()}}",
           },
           async: false,
@@ -143,6 +144,7 @@
           type:"POST",
           data: {
             tone_serial_number: argument,
+            id : "{{$find_hul_tone->id}}",
             '_token': "{{csrf_token()}}",
           },
           async: false,

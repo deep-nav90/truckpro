@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add Hul Tone</h1>
+            <h1>Claim/Penalty</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Add Hul Tone</li>
+              <li class="breadcrumb-item active">Claim/Penalty</li>
             </ol>
           </div>
         </div>
@@ -21,17 +21,31 @@
 
     <!-- Main content -->
     <section class="content">
+
+    @if(session()->has("danger"))
+            <div class="alert alert-danger" style="text-align: center;" role="alert">
+                {{session()->get("danger")}}
+            </div>
+            @endif 
+
+        @if(session()->has("success"))
+          <div class="alert alert-success" style="text-align: center;" role="alert">
+                {{session()->get("success")}}
+          </div>
+          @endif
+
+
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Add Hul Tone</h3>
+            <h3 class="card-title">Claim/Penalty</h3>
 
           </div>
           <!-- /.card-header -->
           <div class="card-body">
            
-            <form class="sellfformtruck"  method="POST"  enctype="multipart/form-data" id="hultoneRegisterForm">
+            <form class="sellfformtruck"  method="POST"  enctype="multipart/form-data" id="claimPenaltyForm">
                 @csrf
 
 
@@ -39,25 +53,20 @@
 
             <div class="row card-footer mb-3">
                 
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Tone Sr. No.</label>
-                        <input type="text" name="tone_serial_number" maxlength="10" class="form-control" placeholder="Enter ...">
-                    </div>
-                </div>
+                
                 <div class="col-md-4">
                     
                     <div class="form-group">
-                      <label>Hul Tone</label>
-                        <input type="text" maxlength="3" name="hul_tone" class="form-control only-numeric" placeholder="Enter ...">
+                      <label>Claim Price Per Day</label>
+                        <input type="text" maxlength="6" value="{{$find_claim_penalty_record->claim_price_per_day}}" name="claim_price_per_day" class="form-control only-numeric" placeholder="Enter ...">
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     
                     <div class="form-group">
-                      <label>Price</label>
-                        <input type="text" maxlength="6" name="price" class="form-control only-numeric" placeholder="Enter ...">
+                      <label>Penalty Price Per Day</label>
+                        <input type="text" maxlength="6" name="penalty_price_per_day" value="{{$find_claim_penalty_record->penalty_price_per_day}}" class="form-control only-numeric" placeholder="Enter ...">
                     </div>
                 </div>
                 
@@ -74,7 +83,6 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="card-footer">
-                    <a href="{{route('admin.gr-register.hulTone')}}" class="btn btn-danger">Back</a>
                   <button type="submit" class="btn btn-info float-right selfbtn saveBtn" disabled="true">Save</button>
                   
                 </div>
@@ -117,66 +125,24 @@
       });
 
 
-      $.validator.addMethod("check_exists_hul_tone",function(argument){
-        var exit;
-        $.ajax({
-          url: "{{route('admin.gr-register.checkExistsHulTone')}}",
-          type:"POST",
-          data: {
-            hul_tone: argument,
-            '_token': "{{csrf_token()}}",
-          },
-          async: false,
-          success:function(data){
-            exit = data
-          }
-        });
-        return exit == 1?false:true;
-          
-      },'Hul Tone already exists.');
-
-
-      $.validator.addMethod("check_tone_serial_number",function(argument){
-        var exit;
-        $.ajax({
-          url: "{{route('admin.gr-register.checkToneSerialNumber')}}",
-          type:"POST",
-          data: {
-            tone_serial_number: argument,
-            '_token': "{{csrf_token()}}",
-          },
-          async: false,
-          success:function(data){
-            exit = data
-          }
-        });
-        return exit == 1?false:true;
-          
-      },'Tone serial number already exists.');
-
-      $('#hultoneRegisterForm').validate({ // initialize the plugin
+      $('#claimPenaltyForm').validate({ // initialize the plugin
           rules: {
-              tone_serial_number: {
+              claim_price_per_day: {
                   required: true,
-                  check_tone_serial_number : true
+                 
               },
-              hul_tone: {
+              penalty_price_per_day: {
                   required: true,
-                  check_exists_hul_tone : true
-              },
-              price: {
-                  required: true,
+                  
               }
+              
           },
           messages : {
-            tone_serial_number : {
-              required : "Tone Sr. No. is required."
+            claim_price_per_day : {
+              required : "Claim Price Per Day is required."
             },
-            hul_tone : {
-              required : "Hul Tone is required."
-            },
-            price : {
-              required : "Price is required."
+            penalty_price_per_day : {
+              required : "Penalty Price Per Day is required."
             }
           }
       });

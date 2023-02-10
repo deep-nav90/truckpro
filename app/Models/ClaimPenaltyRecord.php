@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tone extends Model
+class ClaimPenaltyRecord extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'tone_serial_number',
-        'hul_tone',
-        'maximum_quantity',
-        'price'
-
+        'claim_price_per_day',
+        'penalty_price_per_day'
     ];
 }

@@ -69,7 +69,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Gr No</label>
-                        <input type="text" name="gr_no" class="form-control gr_no" placeholder="Enter ...">
+                        <input type="text" name="gr_no" id="gr_no" class="form-control gr_no" placeholder="Enter ...">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -81,9 +81,20 @@
                 </div>
                 <div class="col-md-4">
                     <label>Truck No</label>
-                    <div class="input-group">
+                    <!-- <div class="input-group">
                        <input type="text" name="truck_no" class="form-control truck_no" >
-                    </div>
+                    </div> -->
+
+                    <select class="form-control select2" name="truck_id" id="truck_id" style="width: 100%;">
+                      <option value="">Select Truck No.</option>
+                      @foreach($trucks as $truck)
+
+                      <option value="{{$truck->id}}">{{$truck->truck_no}}</option>
+
+                      @endforeach()
+                    
+                    </select>
+
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
@@ -94,7 +105,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                       <label>Quantity </label>
-                      <input type="text" name="quantity" class="form-control quantity" placeholder="Enter ...">
+                      <input type="text" name="quantity" class="form-control quantity only-numeric" id="quantity" placeholder="Enter ...">
                   </div>
               </div>
               
@@ -108,7 +119,7 @@
                       <div class="form-group">
                         <label>HUL Rate</label>
                         <div class="input-group">
-                           <input type="text" name="hul_rate" class="form-control hul_rate" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                           <input type="text" name="hul_rate" id = "hul_rate" class="form-control hul_rate" readonly>
                         </div>
                         <span class="error hul_rate_error"></span>
                         <!-- /.input group -->
@@ -118,7 +129,7 @@
                       <div class="form-group">
                         <label>HUL Ton</label>
                         <div class="input-group">
-                            <input type="text" name="hul_ton" class="form-control hul_ton" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                            <input type="text" name="hul_ton" id = "hul_tone" class="form-control hul_ton" readonly>
                         </div>
                         <span class="error hul_ton_error"></span>
                         <!-- /.input group -->
@@ -130,7 +141,7 @@
               <div class="col-md-4">
                   <div class="form-group">
                       <label>Amount</label>
-                      <input type="text" name="hul_amount" class="form-control hul_amount" placeholder="Enter ...">
+                      <input type="text" name="hul_amount" id = "hul_amount" class="form-control hul_amount" placeholder="Enter ...">
                   </div>
               </div>
               <div class="col-md-4">
@@ -142,21 +153,50 @@
               </div>
               <div class="col-md-4">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="form-group">
-                        <label>Penalty</label>
-                        <div class="input-group">
+                        <label>Penalty Days</label>
+                        <!-- <div class="input-group">
                            <input type="text" name="penalty" class="form-control penalty" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
+                        </div> -->
+
+                       
+                          
+                          <select class="form-control select2" name="penalty_days" id="penalty_days" style="width: 100%;">
+                            <option value="0">No Penalty</option>
+                            @foreach($days_upto as $days)
+
+                            <option value="{{$days}}">{{$days}} @if($days == 1) Day @else Days @endif()</option>
+
+                            @endforeach()
+                          
+                          </select>
+                        
+
                         <span class="error penalty_error"></span>
                         <!-- /.input group -->
                         </div>
                     </div>
-                    <div class="col-md-6">
+
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Penalty Price</label>
+                        <div class="input-group">
+                            <input type="text" name="penalty_price" id="penalty_price" class="form-control penalty_price" readonly>
+                        </div>
+                        <span class="error penalty_price_error"></span>
+                        <!-- /.input group -->
+                        </div>
+                    </div>
+                          
+
+
+                    <div class="col-md-4">
                       <div class="form-group">
                         <label>Detention</label>
                         <div class="input-group">
-                            <input type="text" name="detention" class="form-control detention" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                            <input type="text" name="detention" maxlength="8" class="form-control detention only-numeric">
                         </div>
                         <span class="error detention_error"></span>
                         <!-- /.input group -->
@@ -167,17 +207,42 @@
               </div>
               <div class="col-md-4">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="form-group">
-                        <label>Claims</label>
-                        <div class="input-group">
+                        <label>Claims Days</label>
+                        <!-- <div class="input-group">
                            <input type="text" name="claims" class="form-control claims" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
+                        </div> -->
+
+                        <select class="form-control select2" name="claim_days" id="claim_days" style="width: 100%;">
+                          <option value="0">No Claim</option>
+                          @foreach($days_upto as $days)
+
+                          <option value="{{$days}}">{{$days}} @if($days == 1) Day @else Days @endif()</option>
+
+                          @endforeach()
+                        
+                        </select>
+
                         <span class="error claims_error"></span>
                         <!-- /.input group -->
                         </div>
                     </div>
-                    <div class="col-md-6">
+
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Claim Price</label>
+                        <div class="input-group">
+                            <input type="text" name="claim_price" id="claim_price" class="form-control claim_price" readonly>
+                        </div>
+                        <span class="error claim_price_error"></span>
+                        <!-- /.input group -->
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
                       <div class="form-group">
                         <label>Amount</label>
                         <div class="input-group">
@@ -521,3 +586,89 @@
   </div>
   <script src="{{ asset('dist/js/adminpage/driver.js') }}"></script>
 @endsection
+
+
+@section('js')
+<script>
+  $(document).ready(function(){
+    $("#penalty_days").on("change",function(){
+      let penalty_days = parseInt($(this).val());
+      let penalty_price = "{{$penalty_price}}";
+
+      let total_amount_penalty_days = penalty_days * penalty_price;
+
+      $("#penalty_price").val(total_amount_penalty_days);
+      
+    })
+
+    $("#claim_days").on("change",function(){
+      let claim_days = parseInt($(this).val());
+      let claim_price = "{{$claim_price}}";
+
+      let total_amount_claim_days = claim_days * claim_price;
+
+      $("#claim_price").val(total_amount_claim_days);
+      
+    })
+
+
+    $(".only-numeric").bind("keypress", function (e) {
+      var keyCode = e.which ? e.which : e.keyCode
+            
+      if (!(keyCode >= 48 && keyCode <= 57)) {
+        return false;
+      }
+    });
+
+    function delay(callback, ms) {
+      var timer = 0;
+      return function() {
+        var context = this, args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          callback.apply(context, args);
+        }, ms || 0);
+      };
+    }
+
+    $('#quantity').keyup(delay(function (e) {
+      let quantity = $(this).val();
+
+      if(quantity != undefined && quantity != ""){
+          $.ajax({
+          url: "{{route('admin.gr-register.findHultoneAccordingToQuantity')}}",
+          type:"POST",
+          data: {
+            quantity: quantity,
+            '_token': "{{csrf_token()}}",
+          },
+          async: false,
+          success:function(res){
+            let hultoneFind = res;
+
+            let hul_rate = $("#hul_rate").val(hultoneFind.price);
+            let hul_tone = $("#hul_tone").val(hultoneFind.hul_tone);
+           // alert(hul_tone)
+
+            let amount_calculate = parseFloat(hultoneFind.hul_tone) * parseFloat(hultoneFind.price);
+
+            $("#hul_amount").val(amount_calculate);
+
+          }
+        });
+      }
+
+
+      
+    }, 500));
+
+
+
+    $("#gr_type").on("change",function(){
+      $("#gr_no").val("");
+    })
+    
+
+  })
+</script>
+@endsection()
