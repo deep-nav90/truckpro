@@ -45,7 +45,7 @@ class GRRegistrationController extends Controller
                 $days_upto[] = $j;
             }
 
-           $trucks = Truck::select("id","truck_no")->whereDeletedAt(null)->get();
+           $trucks = Truck::select("id","truck_no","truck_type")->whereDeletedAt(null)->get();
 
             return view('admin.gr_registration.create',compact('days_upto','claim_price','penalty_price','trucks'));
         }

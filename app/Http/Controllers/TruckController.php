@@ -23,11 +23,11 @@ class TruckController extends Controller
     }
     public function store(Request $request)
     {
-        print_r($request->all());
+       // print_r($request->all());
         $added_by = Auth::guard('admin')->user()->id;
         $commonClass = new CommonController;
         $truck = new Truck;
-        $truck->trucktype=$request->trucktype;
+        $truck->truck_type=$request->trucktype;
         $truck->truck_no=$request->truck_no;
         if($request->trucktype==2)
         {
