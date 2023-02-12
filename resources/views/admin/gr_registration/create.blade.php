@@ -2,6 +2,16 @@
 @section('content')
 <div class="content-wrapper">
 
+<style>
+  .row.card-footer.mb-3.forNmccTruck span img.gr_plush_icon, .row.card-footer.mb-3.forNmccTruck span img.gr_del_icon, .row.card-footer.mb-3.forOtherTruck span img.gr_plush_for_other_truck_icon, .row.card-footer.mb-3.forOtherTruck span img.gr_del_icon {
+    width: 26px;
+    position: absolute;
+    right: 0;
+    margin: -26px 0px 0px 0px;
+    cursor : pointer;
+}
+</style>
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -268,238 +278,262 @@
             {{-- endrow --}}
 
             {{-- newrow --}}
-            <div class="row card-footer mb-3 forNmccTruck  d-none">
-              <div class="row forNmccIndex" index-id="0">
-                <div class="col-md-4">
-                  <div class="form-group">
-                      <label>Cash</label>
-                      <input type="text" name="gr_cash_nmcc" index-id="0" value="0" maxlength="8" class="form-control gr_cash_nmcc only-numeric" placeholder="Enter ...">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Bank</label>
-                          <div class="input-group">
-                            <input type="text" name="gr_bank" index-id="0"  class="form-control gr_bank" maxlength="15">
-                          </div>
-                          <span class="error gr_bank_error"></span>
-                          <!-- /.input group -->
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Date</label>
-                          <div class="input-group">
-                              <input type="text" name="gr_new_date" index-id="0"  class="form-control gr_new_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                          </div>
-                          <span class="error gr_new_date_error"></span>
-                          <!-- /.input group -->
-                          </div>
-                      </div>
-                  </div>
-                  
-                </div>
-                <div class="col-md-4">
-                  <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Extras</label>
-                          <div class="input-group">
-                            <input type="text" name="gr_extra" index-id="0" maxlength="8" value="0" class="form-control gr_extra only-numeric">
-                          </div>
-                          <span class="error gr_extra_error"></span>
-                          <!-- /.input group -->
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Details</label>
-                          <div class="input-group">
-                              <input type="text" name="gr_details" index-id="0" maxlength="255" class="form-control gr_details">
-                          </div>
-                          <span class="error gr_details_error"></span>
-                          <!-- /.input group -->
-                          </div>
-                      </div>
-                  </div>
-                  
-                </div>
-                <div class="col-md-4">
-                  <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Lt</label>
-                          <div class="input-group">
-                            <input type="text" name="gr_lt" index-id="0" maxlength="3" class="form-control gr_lt only-numeric">
-                          </div>
-                          <span class="error gr_lt_error"></span>
-                          <!-- /.input group -->
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Amount</label>
-                          <div class="input-group">
-                              <input type="text" name="gr_lt_amt" index-id="0" maxlength="8" value="0" class="form-control gr_lt_amt only-numeric">
-                          </div>
-                          <span class="error gr_lt_amt_error"></span>
-                          <!-- /.input group -->
-                          </div>
-                      </div>
-                  </div>
-                  
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Total Diesel</label>
-                        <input type="text" name="gr_diesel_amount" index-id="0" maxlength="8" class="form-control gr_diesel_amount only-numeric" value="0" readonly>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label>Total Advance</label>
-                    <div class="input-group">
-                        
-                        <input type="text" name="gr_total_advance" index-id="0" maxlength="8" class="form-control gr_total_advance myrequire only-numeric" value="0" readonly >
-                    </div>
-                </div>
-              </div>
-            
-              
-            
-              <!-- row div -->
-          </div> 
-            {{-- endrow --}}
-             {{-- newrow --}}
-             <div class="row card-footer mb-3 forOtherTruck">
-              <div class="col-md-4">
-                <div class="form-group">
-                    <label>Transporter</label>
-                    <input type="text" name="gr_transporter" class="form-control gr_transporter" placeholder="Enter ...">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Rate</label>
-                        <div class="input-group">
-                           <input type="text" name="gr_rate" class="form-control gr_rate" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_rate_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Ton</label>
-                        <div class="input-group">
-                            <input type="text" name="gr_ton" class="form-control gr_ton" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_ton_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                </div>
+            <div class="forNmccTruckIndex">
+              <div class="row card-footer mb-3 forNmccTruck  d-none" index-id="0"><span><img class="gr_plush_icon" src="{{url('images/background/plus-vector-icon.jpg')}}"></span>
                 
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                    <label>Total</label>
-                    <input type="text" name="gr_rate_total" class="form-control gr_rate_total" placeholder="Enter ...">
-                </div>
-            </div>
-              <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Diesel Amt</label>
-                        <div class="input-group">
-                           <input type="text" name="gr_diesel_amt" class="form-control gr_diesel_amt" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_diesel_amt_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Cash</label>
-                        <div class="input-group">
-                            <input type="text" name="gr_cash" class="form-control gr_cash" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_cash_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                </div>
                 
-              </div>
-              <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label>Total Adv</label>
-                        <div class="input-group">
-                           <input type="text" name="gr_total_adv" class="form-control gr_total_adv" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_total_adv_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label>Deductions</label>
-                        <div class="input-group">
-                            <input type="text" name="gr_deducation" class="form-control gr_deducation" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_deducation_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label>Additions</label>
-                        <div class="input-group">
-                            <input type="text" name="gr_addition" class="form-control gr_addition" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_addition_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                </div>
-                
-              </div>
-             
-              <div class="col-md-4">
-                  <div class="form-group">
-                      <label>Net Payment</label>
-                      <input type="text" name="gr_net_payment" class="form-control gr_net_payment" placeholder="Enter ...">
-                  </div>
-              </div>
-             
-            
-              
-            
-              <!-- row div -->
-          </div> 
-            {{-- endrow --}}
-             {{-- newrow --}}
-             <div class="row card-footer mb-3">
-              
                   <div class="col-md-4">
                     <div class="form-group">
-                        <label>Balance 1</label>
-                        <input type="text" name="gr_balance" index-id="0" index-id="0" class="form-control gr_balance" placeholder="Enter ...">
+                        <label>Cash</label>
+                        <input type="text" name="gr_cash_nmcc[]" index-id="0" value="0" maxlength="8" class="form-control gr_cash_nmcc only-numeric" placeholder="Enter ...">
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
+                            <label>Bank</label>
+                            <div class="input-group">
+                              <input type="text" name="gr_bank[]" index-id="0"  class="form-control gr_bank" maxlength="15">
+                            </div>
+                            <span class="error gr_bank_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Date</label>
+                            <div class="input-group">
+                                <input type="text" name="gr_new_date[]" index-id="0"  class="form-control gr_new_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                            </div>
+                            <span class="error gr_new_date_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Extras</label>
+                            <div class="input-group">
+                              <input type="text" name="gr_extra[]" index-id="0" maxlength="8" value="0" class="form-control gr_extra only-numeric">
+                            </div>
+                            <span class="error gr_extra_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Details</label>
+                            <div class="input-group">
+                                <input type="text" name="gr_details[]" index-id="0" maxlength="255" class="form-control gr_details">
+                            </div>
+                            <span class="error gr_details_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Lt</label>
+                            <div class="input-group">
+                              <input type="text" name="gr_lt[]" index-id="0" maxlength="3" class="form-control gr_lt only-numeric">
+                            </div>
+                            <span class="error gr_lt_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
                             <label>Amount</label>
                             <div class="input-group">
-                              <input type="text" name="gr_balance_amt" index-id="0" maxlength="8" class="form-control gr_balance_amt only-numeric" readonly>
+                                <input type="text" name="gr_lt_amt[]" index-id="0" maxlength="8" value="0" class="form-control gr_lt_amt only-numeric">
+                            </div>
+                            <span class="error gr_lt_amt_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label>Total Diesel</label>
+                          <input type="text" name="gr_diesel_amount[]" index-id="0" maxlength="8" class="form-control gr_diesel_amount only-numeric" value="0" readonly>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <label>Total Advance</label>
+                      <div class="input-group">
+                          
+                          <input type="text" name="gr_total_advance[]" index-id="0" maxlength="8" class="form-control gr_total_advance myrequire only-numeric" value="0" readonly >
+                      </div>
+                  </div>
+                <!-- row div -->
+            </div> 
+          </div>  
+            {{-- endrow --}}
+             {{-- newrow --}}
+             <div class="forOtherTruckIndex">
+              <div class="row card-footer mb-3 forOtherTruck" index-id="0"><span><img class="gr_plush_for_other_truck_icon" index-id="0" src="{{url('images/background/plus-vector-icon.jpg')}}"></span>
+                <div class="col-md-4">
+                  <div class="form-group">
+                      <label>Transporter</label>
+                      <input type="text" name="gr_transporter[]" index-id="0" class="form-control gr_transporter" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Rate</label>
+                          <div class="input-group">
+                            <input type="text" name="gr_rate[]" index-id="0" maxlength="8" class="form-control gr_rate only-numeric">
+                          </div>
+                          <span class="error gr_rate_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Ton</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_ton[]" index-id="0" maxlength="3" class="form-control gr_ton only-numeric">
+                          </div>
+                          <span class="error gr_ton_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                      <label>Total</label>
+                      <input type="text" name="gr_rate_total[]" index-id="0" maxlength="8"  class="form-control gr_rate_total only-numeric" readonly>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <label>Lt</label>
+                          <div class="input-group">
+                            <input type="text" name="other_gr_diesel_lt[]" index-id="0" maxlentgh="3" class="form-control other_gr_diesel_lt only-numeric">
+                          </div>
+                          <span class="error other_gr_diesel_lt_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label>Amount</label>
+                          <div class="input-group">
+                            <input type="text" name="other_gr_diesel_amt[]" index-id="0" maxlentgh="3" class="form-control other_gr_diesel_amt only-numeric">
+                          </div>
+                          <span class="error other_gr_diesel_amt_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Total Diesel Amt</label>
+                          <div class="input-group">
+                            <input type="text" name="other_total_diesel_amt[]" index-id="0" maxlentgh="3" class="form-control other_total_diesel_amt only-numeric" readonly>
+                          </div>
+                          <span class="error other_total_diesel_amt_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label>Cash</label>
+                          <div class="input-group">
+                              <input type="text" name="other_gr_cash[]" index-id="0" maxlentgh="8" class="form-control other_gr_cash only-numeric">
+                          </div>
+                          <span class="error other_gr_cash_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Total Adv</label>
+                          <div class="input-group">
+                            <input type="text" name="other_gr_total_adv[]" index-id="0" maxlentgh="8" class="form-control other_gr_total_adv" readonly>
+                          </div>
+                          <span class="error other_gr_total_adv_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Deductions</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_deducation[]" index-id="0" maxlength="8" class="form-control gr_deducation only-numeric">
+                          </div>
+                          <span class="error gr_deducation_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Additions</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_addition[]" index-id="0" maxlength="8" class="form-control gr_addition only-numeric">
+                          </div>
+                          <span class="error gr_addition_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+              
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Net Payment</label>
+                        <input type="text" name="gr_net_payment[]" index-id="0" maxlength="8" class="form-control gr_net_payment only-numeric" placeholder="Enter ...">
+                    </div>
+                </div>
+              </div>
+             
+            
+              
+            
+              <!-- row div -->
+          </div> 
+            {{-- endrow --}}
+             {{-- newrow --}}
+              <div class="row card-footer balance_append mb-3">
+              
+                  <div class="col-md-4 balance" index-id="0">
+                    <div class="form-group">
+                        <label>Balance 1</label>
+                        <input type="text" name="gr_balance[]" index-id="0"  class="form-control gr_balance" placeholder="Enter ...">
+                    </div>
+                  </div>
+                  <div class="col-md-4 balance" index-id="0">
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Amount</label>
+                            <div class="input-group">
+                              <input type="text" name="gr_balance_amt[]" index-id="0" maxlength="8" class="form-control gr_balance_amt only-numeric" readonly>
                             </div>
                             <span class="error gr_balance_amt_error"></span>
                             <!-- /.input group -->
@@ -509,7 +543,7 @@
                           <div class="form-group">
                             <label>Date</label>
                             <div class="input-group">
-                                <input type="text" name="gr_balance_date" index-id="0" class="form-control gr_balance_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                                <input type="text" name="gr_balance_date[]" index-id="0" class="form-control gr_balance_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
                             </div>
                             <span class="error gr_balance_date_error"></span>
                             <!-- /.input group -->
@@ -518,43 +552,16 @@
                     </div>
                     
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-4 balance" index-id="0">
                     <div class="form-group">
                         <label>Trip Margin</label>
                         <input type="text" name="gr_margin" id="gr_margin" maxlength="8" class="form-control gr_margin only-numeric" readonly>
                     </div>
-                </div>
+                  </div>
 
               
-            <div class="col-md-4">
-              <div class="form-group">
-                  <label>Balance 2</label>
-                  <input type="text" name="gr_balance" class="form-control gr_balance" placeholder="Enter ...">
-              </div>
-          </div>
-              <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Amount</label>
-                        <div class="input-group">
-                           <input type="text" name="gr_balance_amt" class="form-control gr_balance_amt" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_balance_amt_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Date</label>
-                        <div class="input-group">
-                            <input type="text" name="gr_balance_date" class="form-control gr_balance_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
-                        </div>
-                        <span class="error gr_balance_date_error"></span>
-                        <!-- /.input group -->
-                        </div>
-                    </div>
-                </div>
+            
+              
                 
               </div>
               
@@ -935,16 +942,57 @@
         $(".forNmccTruck").addClass('d-none');
 
       }
+
+
+      $(".balance").remove();
+
+      let balance_append_html = `<div class="col-md-4 balance" index-id="0">
+                    <div class="form-group">
+                        <label>Balance 1</label>
+                        <input type="text" name="gr_balance[]" index-id="0" class="form-control gr_balance" placeholder="Enter ...">
+                    </div>
+                  </div>
+                  <div class="col-md-4 balance" index-id="0">
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Amount</label>
+                            <div class="input-group">
+                              <input type="text" name="gr_balance_amt[]" index-id="0" maxlength="8" class="form-control gr_balance_amt only-numeric" readonly>
+                            </div>
+                            <span class="error gr_balance_amt_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Date</label>
+                            <div class="input-group">
+                                <input type="text" name="gr_balance_date[]" index-id="0" class="form-control gr_balance_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                            </div>
+                            <span class="error gr_balance_date_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-4 balance" index-id="0">
+                    <div class="form-group">
+                        <label>Trip Margin</label>
+                        <input type="text" name="gr_margin" id="gr_margin" maxlength="8" class="form-control gr_margin only-numeric" readonly>
+                    </div>
+                  </div>`;
+
+      $(".balance_append").append(balance_append_html);
     
       
       //calculate final amount
     })
 
 
+    $(document).on("keyup",".gr_cash_nmcc",delay(function(e){
 
-    $('.gr_cash_nmcc').keyup(delay(function (e) {
-      
-      
       let gr_cash_nmcc = $(this).val();
       
       if(gr_cash_nmcc == undefined || gr_cash_nmcc == ""){
@@ -964,14 +1012,76 @@
       
       $(".gr_total_advance[index-id='"+index_id+"']").val(__total_adv);
 
-      let cal_balance = parseFloat($("#hul_amount").val()) - __total_adv;
+      //cal balance
 
-      $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+      $(".gr_total_advance").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".gr_total_advance[index-id='"+j+"']").length > 0){
+            let gr_total_adv = parseFloat($(".gr_total_advance[index-id='"+j+"']").val());
+            tt_avd.push(gr_total_adv);
+          }
+        }
 
-    }, 500));
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+      
+    }, 500))
+    // $('.gr_cash_nmcc').keyup(delay(function (e) {
+      
+      
+    //   let gr_cash_nmcc = $(this).val();
+      
+    //   if(gr_cash_nmcc == undefined || gr_cash_nmcc == ""){
+    //     gr_cash_nmcc = 0;
+    //     //$(this).val(penality_price);
+    //   }else{
+    //     gr_cash_nmcc = parseFloat(gr_cash_nmcc);
+    //   }
+      
+
+    //   let index_id = $(this).attr("index-id");
+    //   //alert(index_id)
+    //   let extra = parseFloat($(".gr_extra[index-id='"+index_id+"']").val());
+    //   let gr_diesel_amount = parseFloat($(".gr_diesel_amount[index-id='"+index_id+"']").val());
+    //   let __total_adv = gr_cash_nmcc + extra + gr_diesel_amount;
+    //   //console.log(extra,gr_diesel_amount)
+      
+    //   $(".gr_total_advance[index-id='"+index_id+"']").val(__total_adv);
+
+    //   //cal balance
+
+    //   $(".gr_total_advance").each(function(){
+    //     let __index_id = $(this).attr("index-id");
+    //     let tt_avd = [];
+    //     for(let j = __index_id; j >= 0; j--){
+    //       if($(".gr_total_advance[index-id='"+j+"']").length > 0){
+    //         let gr_total_adv = parseFloat($(".gr_total_advance[index-id='"+j+"']").val());
+    //         tt_avd.push(gr_total_adv);
+    //       }
+    //     }
+
+    //     let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+    //     let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+    //     $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+    //   })
+
+      
+
+    // }, 500));
 
 
-    $('.gr_extra').keyup(delay(function (e) {
+
+    $(document).on("keyup",".gr_extra",delay(function(e){
       
       
       let extra = $(this).val();
@@ -993,10 +1103,29 @@
       
       $(".gr_total_advance[index-id='"+index_id+"']").val(__total_adv);
 
+      $(".gr_total_advance").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".gr_total_advance[index-id='"+j+"']").length > 0){
+            let gr_total_adv = parseFloat($(".gr_total_advance[index-id='"+j+"']").val());
+            tt_avd.push(gr_total_adv);
+          }
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
     }, 500));
 
 
-    $('.gr_lt').keyup(delay(function (e) {
+    //$('.gr_lt').keyup(delay(function (e) {
+    $(document).on("keyup",".gr_lt",delay(function(e){
       
       
       let gr_lt = $(this).val();
@@ -1027,11 +1156,30 @@
       
       $(".gr_total_advance[index-id='"+index_id+"']").val(__total_adv);
 
+      $(".gr_total_advance").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".gr_total_advance[index-id='"+j+"']").length > 0){
+            let gr_total_adv = parseFloat($(".gr_total_advance[index-id='"+j+"']").val());
+            tt_avd.push(gr_total_adv);
+          }
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
     }, 500));
 
 
 
-    $('.gr_lt_amt').keyup(delay(function (e) {
+    //$('.gr_lt_amt').keyup(delay(function (e) {
+    $(document).on("keyup",".gr_lt_amt",delay(function(e){
       
       
       let gr_lt_amt = $(this).val();
@@ -1062,8 +1210,1092 @@
       
       $(".gr_total_advance[index-id='"+index_id+"']").val(__total_adv);
 
+      $(".gr_total_advance").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".gr_total_advance[index-id='"+j+"']").length > 0){
+            let gr_total_adv = parseFloat($(".gr_total_advance[index-id='"+j+"']").val());
+            tt_avd.push(gr_total_adv);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
+    }, 500));
+
+
+    $(".gr_plush_icon").on("click",function(){
+      let lastIndex = $(".forNmccTruck:last").attr("index-id");
+      let nextIndex = parseInt(lastIndex) + 1;
+      let balance_counting = nextIndex + 1;
+
+      let __html = `<div class="row card-footer mb-3 forNmccTruck" index-id="`+nextIndex+`"><span><img class="gr_del_icon"  index-id="`+nextIndex+`" src="{{url('images/background/del.png')}}"></span>
+                
+                
+                <div class="col-md-4">
+                  <div class="form-group">
+                      <label>Cash</label>
+                      <input type="text" name="gr_cash_nmcc[]" index-id="`+nextIndex+`" value="0" maxlength="8" class="form-control gr_cash_nmcc only-numeric" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Bank</label>
+                          <div class="input-group">
+                            <input type="text" name="gr_bank[]" index-id="`+nextIndex+`"  class="form-control gr_bank" maxlength="15">
+                          </div>
+                          <span class="error gr_bank_error"></span>
+                          
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Date</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_new_date[]" index-id="`+nextIndex+`"  class="form-control gr_new_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                          </div>
+                          <span class="error gr_new_date_error"></span>
+                          
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Extras</label>
+                          <div class="input-group">
+                            <input type="text" name="gr_extra[]" index-id="`+nextIndex+`" maxlength="8" value="0" class="form-control gr_extra only-numeric">
+                          </div>
+                          <span class="error gr_extra_error"></span>
+                          
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Details</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_details[]" index-id="`+nextIndex+`" maxlength="255" class="form-control gr_details">
+                          </div>
+                          <span class="error gr_details_error"></span>
+                          
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Lt</label>
+                          <div class="input-group">
+                            <input type="text" name="gr_lt[]" index-id="`+nextIndex+`" maxlength="3" class="form-control gr_lt only-numeric">
+                          </div>
+                          <span class="error gr_lt_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Amount</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_lt_amt[]" index-id="`+nextIndex+`" maxlength="8" value="0" class="form-control gr_lt_amt only-numeric">
+                          </div>
+                          <span class="error gr_lt_amt_error"></span>
+                          <!-- /.input group -->
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Total Diesel</label>
+                        <input type="text" name="gr_diesel_amount[]" index-id="`+nextIndex+`" maxlength="8" class="form-control gr_diesel_amount only-numeric" value="0" readonly>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label>Total Advance</label>
+                    <div class="input-group">
+                        
+                        <input type="text" name="gr_total_advance[]" index-id="`+nextIndex+`" maxlength="8" class="form-control gr_total_advance myrequire only-numeric" value="0" readonly >
+                    </div>
+                </div>
+              
+          </div>`;
+
+      let balance_append_html = `<div class="col-md-4 balance" index-id="`+nextIndex+`">
+                    <div class="form-group">
+                        <label>Balance `+balance_counting+`</label>
+                        <input type="text" name="gr_balance[]" index-id="`+nextIndex+`" class="form-control gr_balance" placeholder="Enter ...">
+                    </div>
+                  </div>
+                  <div class="col-md-4 balance" index-id="`+nextIndex+`">
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Amount</label>
+                            <div class="input-group">
+                              <input type="text" name="gr_balance_amt[]" index-id="`+nextIndex+`" maxlength="8" class="form-control gr_balance_amt only-numeric" readonly>
+                            </div>
+                            <span class="error gr_balance_amt_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Date</label>
+                            <div class="input-group">
+                                <input type="text" name="gr_balance_date[]" index-id="`+nextIndex+`" class="form-control gr_balance_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                            </div>
+                            <span class="error gr_balance_date_error"></span>
+                            <!-- /.input group -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-4 balance" index-id="`+nextIndex+`">
+                    <div class="form-group">
+                        <label>Trip Margin</label>
+                        <input type="text" name="gr_margin" id="gr_margin" maxlength="8" class="form-control gr_margin only-numeric" readonly>
+                    </div>
+                  </div>`;
+
+      $(".balance_append").append(balance_append_html);
+
+      $(".forNmccTruckIndex").append(__html);
+
+      
+    })
+
+
+    $(".gr_plush_for_other_truck_icon").on("click",function(){
+      let lastIndex = $(".forOtherTruck:last").attr("index-id");
+      let nextIndex = parseInt(lastIndex) + 1;
+      let balance_counting = nextIndex + 1;
+
+      let __html = `<div class="row card-footer mb-3 forOtherTruck" index-id="`+nextIndex+`"><span><img class="gr_del_icon"  index-id="`+nextIndex+`" src="{{url('images/background/del.png')}}"></span>
+                <div class="col-md-4">
+                  <div class="form-group">
+                      <label>Transporter</label>
+                      <input type="text" name="gr_transporter[]" index-id="`+nextIndex+`" class="form-control gr_transporter" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Rate</label>
+                          <div class="input-group">
+                            <input type="text" name="gr_rate[]" index-id="`+nextIndex+`" maxlength="8" class="form-control gr_rate only-numeric">
+                          </div>
+                          <span class="error gr_rate_error"></span>
+                          
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Ton</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_ton[]" index-id="`+nextIndex+`" maxlength="3" class="form-control gr_ton only-numeric">
+                          </div>
+                          <span class="error gr_ton_error"></span>
+                          
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                      <label>Total</label>
+                      <input type="text" name="gr_rate_total[]" index-id="`+nextIndex+`" maxlength="8"  class="form-control gr_rate_total only-numeric" readonly>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <label>Lt</label>
+                          <div class="input-group">
+                            <input type="text" name="other_gr_diesel_lt[]" index-id="`+nextIndex+`" maxlentgh="3" class="form-control other_gr_diesel_lt only-numeric">
+                          </div>
+                          <span class="error other_gr_diesel_lt_error"></span>
+                          
+                          </div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label>Amount</label>
+                          <div class="input-group">
+                            <input type="text" name="other_gr_diesel_amt[]" index-id="`+nextIndex+`" maxlentgh="3" class="form-control other_gr_diesel_amt only-numeric">
+                          </div>
+                          <span class="error other_gr_diesel_amt_error"></span>
+                          
+                          </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Total Diesel Amt</label>
+                          <div class="input-group">
+                            <input type="text" name="other_total_diesel_amt[]" index-id="`+nextIndex+`" maxlentgh="3" class="form-control other_total_diesel_amt only-numeric" readonly>
+                          </div>
+                          <span class="error other_total_diesel_amt_error"></span>
+                         
+                          </div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label>Cash</label>
+                          <div class="input-group">
+                              <input type="text" name="other_gr_cash[]" index-id="`+nextIndex+`" maxlentgh="8" class="form-control other_gr_cash only-numeric">
+                          </div>
+                          <span class="error other_gr_cash_error"></span>
+                          
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Total Adv</label>
+                          <div class="input-group">
+                            <input type="text" name="other_gr_total_adv[]" index-id="`+nextIndex+`" maxlentgh="8" class="form-control other_gr_total_adv" readonly>
+                          </div>
+                          <span class="error other_gr_total_adv_error"></span>
+                          
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Deductions</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_deducation[]" index-id="`+nextIndex+`" maxlength="8" class="form-control gr_deducation only-numeric">
+                          </div>
+                          <span class="error gr_deducation_error"></span>
+                          
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Additions</label>
+                          <div class="input-group">
+                              <input type="text" name="gr_addition[]" index-id="`+nextIndex+`" maxlength="8" class="form-control gr_addition only-numeric">
+                          </div>
+                          <span class="error gr_addition_error"></span>
+                          
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+              
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Net Payment</label>
+                        <input type="text" name="gr_net_payment[]" index-id="`+nextIndex+`" maxlength="8" class="form-control gr_net_payment only-numeric" placeholder="Enter ...">
+                    </div>
+                </div>
+              </div>`;
+
+
+              let balance_append_html = `<div class="col-md-4 balance" index-id="`+nextIndex+`">
+                    <div class="form-group">
+                        <label>Balance `+balance_counting+`</label>
+                        <input type="text" name="gr_balance[]" index-id="`+nextIndex+`" class="form-control gr_balance" placeholder="Enter ...">
+                    </div>
+                  </div>
+                  <div class="col-md-4 balance" index-id="`+nextIndex+`">
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Amount</label>
+                            <div class="input-group">
+                              <input type="text" name="gr_balance_amt[]" index-id="`+nextIndex+`" maxlength="8" class="form-control gr_balance_amt only-numeric" readonly>
+                            </div>
+                            <span class="error gr_balance_amt_error"></span>
+                            
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Date</label>
+                            <div class="input-group">
+                                <input type="text" name="gr_balance_date[]" index-id="`+nextIndex+`" class="form-control gr_balance_date" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                            </div>
+                            <span class="error gr_balance_date_error"></span>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-4 balance" index-id="`+nextIndex+`">
+                    <div class="form-group">
+                        <label>Trip Margin</label>
+                        <input type="text" name="gr_margin" id="gr_margin" maxlength="8" class="form-control gr_margin only-numeric" readonly>
+                    </div>
+                  </div>`;
+
+          $(".balance_append").append(balance_append_html);
+
+          $(".forOtherTruckIndex").append(__html);
+    })
+
+
+    $(document).on("click",".gr_del_icon",function(){
+      let index_id = $(this).attr("index-id");
+      $(".forNmccTruck[index-id='"+index_id+"']").remove();
+      $(".forOtherTruck[index-id='"+index_id+"']").remove();
+      $(".balance[index-id='"+index_id+"']").remove();
+    })
+
+
+    $(document).on("keyup",".gr_rate",delay(function(e){
+      
+      
+      let gr_rate = $(this).val();
+      
+      if(gr_rate == undefined || gr_rate == ""){
+        gr_rate = 0;
+        //$(this).val(penality_price);
+      }else{
+        gr_rate = parseFloat(gr_rate);
+      }
+
+      let index_id = $(this).attr("index-id");
+      
+      let gr_ton = $(".gr_ton[index-id='"+index_id+"']").val();
+
+      if(gr_ton != ""){
+        gr_ton = parseFloat(gr_ton);
+      }else{
+        gr_ton = 0;
+      }
+
+      let gr_rate_into_gr_ton = gr_rate * gr_ton;
+
+
+      $(".gr_rate_total[index-id='"+index_id+"']").val(gr_rate_into_gr_ton);
+
+      
+      //alert(index_id)
+      let __gr_rate_total = $(".gr_rate_total[index-id='"+index_id+"']").val();
+      if(__gr_rate_total != ""){
+        __gr_rate_total = parseFloat(__gr_rate_total);
+      }else{
+        __gr_rate_total = 0;
+      }
+
+      let __other_total_diesel_amt = $(".other_total_diesel_amt[index-id='"+index_id+"']").val();
+      if(__other_total_diesel_amt != ""){
+        __other_total_diesel_amt = parseFloat(__other_total_diesel_amt);
+      }else{
+        __other_total_diesel_amt = 0;
+      }
+
+      let __other_gr_cash = $(".other_gr_cash[index-id='"+index_id+"']").val();
+      if(__other_gr_cash != ""){
+        __other_gr_cash = parseFloat(__other_gr_cash);
+      }else{
+        __other_gr_cash = 0;
+      }
+
+      
+      let __total_adv = __gr_rate_total + __other_total_diesel_amt + __other_gr_cash;
+      //console.log(extra,gr_diesel_amount)
+      
+      $(".other_gr_total_adv[index-id='"+index_id+"']").val(__total_adv);
+
+      $(".other_gr_total_adv").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".other_gr_total_adv[index-id='"+j+"']").length > 0){
+            let other_gr_total_adv = $(".other_gr_total_adv[index-id='"+j+"']").val();
+            if(other_gr_total_adv != ""){
+              other_gr_total_adv = parseFloat(other_gr_total_adv);
+            }else{
+              other_gr_total_adv = 0;
+            }
+            let gr_deducation = $(".gr_deducation[index-id='"+j+"']").val();
+            if(gr_deducation != ""){
+              gr_deducation = parseFloat(gr_deducation);
+            }else{
+              gr_deducation = 0;
+            }
+            let gr_net_payment = $(".gr_net_payment[index-id='"+j+"']").val();
+
+            if(gr_net_payment != ""){
+              gr_net_payment = parseFloat(gr_net_payment);
+            }else{
+              gr_net_payment = 0;
+            }
+            let sum_total = other_gr_total_adv + gr_deducation + gr_net_payment;
+            // alert(other_gr_total_adv)
+            // alert(gr_deducation)
+            // alert(gr_net_payment)
+
+            tt_avd.push(sum_total);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
+    }, 500));
+
+
+    $(document).on("keyup",".gr_ton",delay(function(e){
+      
+      
+      let gr_ton = $(this).val();
+      
+      if(gr_ton == undefined || gr_ton == ""){
+        gr_ton = 0;
+        //$(this).val(penality_price);
+      }else{
+        gr_ton = parseFloat(gr_ton);
+      }
+
+      let index_id = $(this).attr("index-id");
+      
+      let gr_rate = $(".gr_rate[index-id='"+index_id+"']").val();
+
+      if(gr_rate != ""){
+        gr_rate = parseFloat(gr_rate);
+      }else{
+        gr_rate = 0;
+      }
+
+      let gr_rate_into_gr_ton = gr_rate * gr_ton;
+
+
+      $(".gr_rate_total[index-id='"+index_id+"']").val(gr_rate_into_gr_ton);
+
+      
+      //alert(index_id)
+      let __gr_rate_total = $(".gr_rate_total[index-id='"+index_id+"']").val();
+      if(__gr_rate_total != ""){
+        __gr_rate_total = parseFloat(__gr_rate_total);
+      }else{
+        __gr_rate_total = 0;
+      }
+
+      let __other_total_diesel_amt = $(".other_total_diesel_amt[index-id='"+index_id+"']").val();
+      if(__other_total_diesel_amt != ""){
+        __other_total_diesel_amt = parseFloat(__other_total_diesel_amt);
+      }else{
+        __other_total_diesel_amt = 0;
+      }
+
+      let __other_gr_cash = $(".other_gr_cash[index-id='"+index_id+"']").val();
+      if(__other_gr_cash != ""){
+        __other_gr_cash = parseFloat(__other_gr_cash);
+      }else{
+        __other_gr_cash = 0;
+      }
+
+      
+      let __total_adv = __gr_rate_total + __other_total_diesel_amt + __other_gr_cash;
+      //console.log(extra,gr_diesel_amount)
+      
+      $(".other_gr_total_adv[index-id='"+index_id+"']").val(__total_adv);
+
+      $(".other_gr_total_adv").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".other_gr_total_adv[index-id='"+j+"']").length > 0){
+            let other_gr_total_adv = $(".other_gr_total_adv[index-id='"+j+"']").val();
+            if(other_gr_total_adv != ""){
+              other_gr_total_adv = parseFloat(other_gr_total_adv);
+            }else{
+              other_gr_total_adv = 0;
+            }
+            let gr_deducation = $(".gr_deducation[index-id='"+j+"']").val();
+            if(gr_deducation != ""){
+              gr_deducation = parseFloat(gr_deducation);
+            }else{
+              gr_deducation = 0;
+            }
+            let gr_net_payment = $(".gr_net_payment[index-id='"+j+"']").val();
+
+            if(gr_net_payment != ""){
+              gr_net_payment = parseFloat(gr_net_payment);
+            }else{
+              gr_net_payment = 0;
+            }
+            let sum_total = other_gr_total_adv + gr_deducation + gr_net_payment;
+            tt_avd.push(sum_total);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
+    }, 500));
+
+
+    $(document).on("keyup",".other_gr_diesel_lt",delay(function(e){
+      
+      
+      let other_gr_diesel_lt = $(this).val();
+      
+      if(other_gr_diesel_lt == undefined || other_gr_diesel_lt == ""){
+        other_gr_diesel_lt = 0;
+        //$(this).val(penality_price);
+      }else{
+        other_gr_diesel_lt = parseFloat(other_gr_diesel_lt);
+      }
+
+      let index_id = $(this).attr("index-id");
+      
+      let other_gr_diesel_amt = $(".other_gr_diesel_amt[index-id='"+index_id+"']").val();
+
+      if(other_gr_diesel_amt != ""){
+        other_gr_diesel_amt = parseFloat(other_gr_diesel_amt);
+      }else{
+        other_gr_diesel_amt = 0;
+      }
+
+      let other_gr_diesel_lt_into_other_gr_diesel_amt = other_gr_diesel_lt * other_gr_diesel_amt;
+
+
+      $(".other_total_diesel_amt[index-id='"+index_id+"']").val(other_gr_diesel_lt_into_other_gr_diesel_amt);
+
+      
+      //alert(index_id)
+      let __gr_rate_total = $(".gr_rate_total[index-id='"+index_id+"']").val();
+      if(__gr_rate_total != ""){
+        __gr_rate_total = parseFloat(__gr_rate_total);
+      }else{
+        __gr_rate_total = 0;
+      }
+
+      let __other_total_diesel_amt = $(".other_total_diesel_amt[index-id='"+index_id+"']").val();
+      if(__other_total_diesel_amt != ""){
+        __other_total_diesel_amt = parseFloat(__other_total_diesel_amt);
+      }else{
+        __other_total_diesel_amt = 0;
+      }
+
+      let __other_gr_cash = $(".other_gr_cash[index-id='"+index_id+"']").val();
+      if(__other_gr_cash != ""){
+        __other_gr_cash = parseFloat(__other_gr_cash);
+      }else{
+        __other_gr_cash = 0;
+      }
+
+      
+      let __total_adv = __gr_rate_total + __other_total_diesel_amt + __other_gr_cash;
+      //console.log(extra,gr_diesel_amount)
+      
+      $(".other_gr_total_adv[index-id='"+index_id+"']").val(__total_adv);
+
+      $(".other_gr_total_adv").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".other_gr_total_adv[index-id='"+j+"']").length > 0){
+            let other_gr_total_adv = $(".other_gr_total_adv[index-id='"+j+"']").val();
+            if(other_gr_total_adv != ""){
+              other_gr_total_adv = parseFloat(other_gr_total_adv);
+            }else{
+              other_gr_total_adv = 0;
+            }
+            let gr_deducation = $(".gr_deducation[index-id='"+j+"']").val();
+            if(gr_deducation != ""){
+              gr_deducation = parseFloat(gr_deducation);
+            }else{
+              gr_deducation = 0;
+            }
+            let gr_net_payment = $(".gr_net_payment[index-id='"+j+"']").val();
+
+            if(gr_net_payment != ""){
+              gr_net_payment = parseFloat(gr_net_payment);
+            }else{
+              gr_net_payment = 0;
+            }
+            let sum_total = other_gr_total_adv + gr_deducation + gr_net_payment;
+            tt_avd.push(sum_total);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
+    }, 500));
+
+
+    $(document).on("keyup",".other_gr_diesel_amt",delay(function(e){
+      
+      
+      let other_gr_diesel_amt = $(this).val();
+      
+      if(other_gr_diesel_amt == undefined || other_gr_diesel_amt == ""){
+        other_gr_diesel_amt = 0;
+        //$(this).val(penality_price);
+      }else{
+        other_gr_diesel_amt = parseFloat(other_gr_diesel_amt);
+      }
+
+      let index_id = $(this).attr("index-id");
+      
+      let other_gr_diesel_lt = $(".other_gr_diesel_lt[index-id='"+index_id+"']").val();
+
+      if(other_gr_diesel_lt != ""){
+        other_gr_diesel_lt = parseFloat(other_gr_diesel_lt);
+      }else{
+        other_gr_diesel_lt = 0;
+      }
+
+      let other_gr_diesel_lt_into_other_gr_diesel_amt = other_gr_diesel_lt * other_gr_diesel_amt;
+
+
+      $(".other_total_diesel_amt[index-id='"+index_id+"']").val(other_gr_diesel_lt_into_other_gr_diesel_amt);
+
+      
+      //alert(index_id)
+      let __gr_rate_total = $(".gr_rate_total[index-id='"+index_id+"']").val();
+      if(__gr_rate_total != ""){
+        __gr_rate_total = parseFloat(__gr_rate_total);
+      }else{
+        __gr_rate_total = 0;
+      }
+
+      let __other_total_diesel_amt = $(".other_total_diesel_amt[index-id='"+index_id+"']").val();
+      if(__other_total_diesel_amt != ""){
+        __other_total_diesel_amt = parseFloat(__other_total_diesel_amt);
+      }else{
+        __other_total_diesel_amt = 0;
+      }
+
+      let __other_gr_cash = $(".other_gr_cash[index-id='"+index_id+"']").val();
+      if(__other_gr_cash != ""){
+        __other_gr_cash = parseFloat(__other_gr_cash);
+      }else{
+        __other_gr_cash = 0;
+      }
+
+      
+      let __total_adv = __gr_rate_total + __other_total_diesel_amt + __other_gr_cash;
+      //console.log(extra,gr_diesel_amount)
+      
+      $(".other_gr_total_adv[index-id='"+index_id+"']").val(__total_adv);
+
+      $(".other_gr_total_adv").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".other_gr_total_adv[index-id='"+j+"']").length > 0){
+            let other_gr_total_adv = $(".other_gr_total_adv[index-id='"+j+"']").val();
+            if(other_gr_total_adv != ""){
+              other_gr_total_adv = parseFloat(other_gr_total_adv);
+            }else{
+              other_gr_total_adv = 0;
+            }
+            let gr_deducation = $(".gr_deducation[index-id='"+j+"']").val();
+            if(gr_deducation != ""){
+              gr_deducation = parseFloat(gr_deducation);
+            }else{
+              gr_deducation = 0;
+            }
+            let gr_net_payment = $(".gr_net_payment[index-id='"+j+"']").val();
+
+            if(gr_net_payment != ""){
+              gr_net_payment = parseFloat(gr_net_payment);
+            }else{
+              gr_net_payment = 0;
+            }
+            let sum_total = other_gr_total_adv + gr_deducation + gr_net_payment;
+            tt_avd.push(sum_total);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
+    }, 500));
+
+
+    $(document).on("keyup",".other_gr_cash",delay(function(e){
+      
+      
+      let other_gr_cash = $(this).val();
+      
+      if(other_gr_cash == undefined || other_gr_cash == ""){
+        other_gr_cash = 0;
+        //$(this).val(penality_price);
+      }else{
+        other_gr_cash = parseFloat(other_gr_cash);
+      }
+
+      let index_id = $(this).attr("index-id");
+    
+      
+      //alert(index_id)
+      let __gr_rate_total = $(".gr_rate_total[index-id='"+index_id+"']").val();
+      if(__gr_rate_total != ""){
+        __gr_rate_total = parseFloat(__gr_rate_total);
+      }else{
+        __gr_rate_total = 0;
+      }
+
+      let __other_total_diesel_amt = $(".other_total_diesel_amt[index-id='"+index_id+"']").val();
+      if(__other_total_diesel_amt != ""){
+        __other_total_diesel_amt = parseFloat(__other_total_diesel_amt);
+      }else{
+        __other_total_diesel_amt = 0;
+      }
+
+      let __other_gr_cash = $(".other_gr_cash[index-id='"+index_id+"']").val();
+      if(__other_gr_cash != ""){
+        __other_gr_cash = parseFloat(__other_gr_cash);
+      }else{
+        __other_gr_cash = 0;
+      }
+
+      
+      let __total_adv = __gr_rate_total + __other_total_diesel_amt + __other_gr_cash;
+      //console.log(extra,gr_diesel_amount)
+      
+      $(".other_gr_total_adv[index-id='"+index_id+"']").val(__total_adv);
+
+      $(".other_gr_total_adv").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".other_gr_total_adv[index-id='"+j+"']").length > 0){
+            let other_gr_total_adv = $(".other_gr_total_adv[index-id='"+j+"']").val();
+            if(other_gr_total_adv != ""){
+              other_gr_total_adv = parseFloat(other_gr_total_adv);
+            }else{
+              other_gr_total_adv = 0;
+            }
+            let gr_deducation = $(".gr_deducation[index-id='"+j+"']").val();
+            if(gr_deducation != ""){
+              gr_deducation = parseFloat(gr_deducation);
+            }else{
+              gr_deducation = 0;
+            }
+            let gr_net_payment = $(".gr_net_payment[index-id='"+j+"']").val();
+
+            if(gr_net_payment != ""){
+              gr_net_payment = parseFloat(gr_net_payment);
+            }else{
+              gr_net_payment = 0;
+            }
+            let sum_total = other_gr_total_adv + gr_deducation + gr_net_payment;
+            tt_avd.push(sum_total);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
+    }, 500));
+
+
+    $(document).on("keyup",".gr_deducation",delay(function(e){
+      
+      
+      let gr_deducation = $(this).val();
+      
+      if(gr_deducation == undefined || gr_deducation == ""){
+        gr_deducation = 0;
+        //$(this).val(penality_price);
+      }else{
+        gr_deducation = parseFloat(gr_deducation);
+      }
+
+      let index_id = $(this).attr("index-id");
+    
+      
+      //alert(index_id)
+      let __gr_rate_total = $(".gr_rate_total[index-id='"+index_id+"']").val();
+      if(__gr_rate_total != ""){
+        __gr_rate_total = parseFloat(__gr_rate_total);
+      }else{
+        __gr_rate_total = 0;
+      }
+
+      let __other_total_diesel_amt = $(".other_total_diesel_amt[index-id='"+index_id+"']").val();
+      if(__other_total_diesel_amt != ""){
+        __other_total_diesel_amt = parseFloat(__other_total_diesel_amt);
+      }else{
+        __other_total_diesel_amt = 0;
+      }
+
+      let __other_gr_cash = $(".other_gr_cash[index-id='"+index_id+"']").val();
+      if(__other_gr_cash != ""){
+        __other_gr_cash = parseFloat(__other_gr_cash);
+      }else{
+        __other_gr_cash = 0;
+      }
+
+      
+      let __total_adv = __gr_rate_total + __other_total_diesel_amt + __other_gr_cash;
+      //console.log(extra,gr_diesel_amount)
+      
+      $(".other_gr_total_adv[index-id='"+index_id+"']").val(__total_adv);
+
+      $(".other_gr_total_adv").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".other_gr_total_adv[index-id='"+j+"']").length > 0){
+            let other_gr_total_adv = $(".other_gr_total_adv[index-id='"+j+"']").val();
+            if(other_gr_total_adv != ""){
+              other_gr_total_adv = parseFloat(other_gr_total_adv);
+            }else{
+              other_gr_total_adv = 0;
+            }
+            let gr_deducation = $(".gr_deducation[index-id='"+j+"']").val();
+            if(gr_deducation != ""){
+              gr_deducation = parseFloat(gr_deducation);
+            }else{
+              gr_deducation = 0;
+            }
+            let gr_net_payment = $(".gr_net_payment[index-id='"+j+"']").val();
+
+            if(gr_net_payment != ""){
+              gr_net_payment = parseFloat(gr_net_payment);
+            }else{
+              gr_net_payment = 0;
+            }
+            let sum_total = other_gr_total_adv + gr_deducation + gr_net_payment;
+            tt_avd.push(sum_total);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
     }, 500));
     
+
+    $(document).on("keyup",".gr_addition",delay(function(e){
+      
+      
+      let gr_addition = $(this).val();
+      
+      if(gr_addition == undefined || gr_addition == ""){
+        gr_addition = 0;
+        //$(this).val(penality_price);
+      }else{
+        gr_addition = parseFloat(gr_addition);
+      }
+
+      let index_id = $(this).attr("index-id");
+    
+      
+      //alert(index_id)
+      let __gr_rate_total = $(".gr_rate_total[index-id='"+index_id+"']").val();
+      if(__gr_rate_total != ""){
+        __gr_rate_total = parseFloat(__gr_rate_total);
+      }else{
+        __gr_rate_total = 0;
+      }
+
+      let __other_total_diesel_amt = $(".other_total_diesel_amt[index-id='"+index_id+"']").val();
+      if(__other_total_diesel_amt != ""){
+        __other_total_diesel_amt = parseFloat(__other_total_diesel_amt);
+      }else{
+        __other_total_diesel_amt = 0;
+      }
+
+      let __other_gr_cash = $(".other_gr_cash[index-id='"+index_id+"']").val();
+      if(__other_gr_cash != ""){
+        __other_gr_cash = parseFloat(__other_gr_cash);
+      }else{
+        __other_gr_cash = 0;
+      }
+
+      
+      let __total_adv = __gr_rate_total + __other_total_diesel_amt + __other_gr_cash;
+      //console.log(extra,gr_diesel_amount)
+      
+      $(".other_gr_total_adv[index-id='"+index_id+"']").val(__total_adv);
+
+      $(".other_gr_total_adv").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".other_gr_total_adv[index-id='"+j+"']").length > 0){
+            let other_gr_total_adv = $(".other_gr_total_adv[index-id='"+j+"']").val();
+            if(other_gr_total_adv != ""){
+              other_gr_total_adv = parseFloat(other_gr_total_adv);
+            }else{
+              other_gr_total_adv = 0;
+            }
+            let gr_deducation = $(".gr_deducation[index-id='"+j+"']").val();
+            if(gr_deducation != ""){
+              gr_deducation = parseFloat(gr_deducation);
+            }else{
+              gr_deducation = 0;
+            }
+            let gr_net_payment = $(".gr_net_payment[index-id='"+j+"']").val();
+
+            if(gr_net_payment != ""){
+              gr_net_payment = parseFloat(gr_net_payment);
+            }else{
+              gr_net_payment = 0;
+            }
+            let sum_total = other_gr_total_adv + gr_deducation + gr_net_payment;
+            tt_avd.push(sum_total);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
+    }, 500));
+    
+    $(document).on("keyup",".gr_net_payment",delay(function(e){
+      
+      
+      let gr_net_payment = $(this).val();
+      
+      if(gr_net_payment == undefined || gr_net_payment == ""){
+        gr_net_payment = 0;
+        //$(this).val(penality_price);
+      }else{
+        gr_net_payment = parseFloat(gr_net_payment);
+      }
+
+      let index_id = $(this).attr("index-id");
+    
+      
+      //alert(index_id)
+      let __gr_rate_total = $(".gr_rate_total[index-id='"+index_id+"']").val();
+      if(__gr_rate_total != ""){
+        __gr_rate_total = parseFloat(__gr_rate_total);
+      }else{
+        __gr_rate_total = 0;
+      }
+
+      let __other_total_diesel_amt = $(".other_total_diesel_amt[index-id='"+index_id+"']").val();
+      if(__other_total_diesel_amt != ""){
+        __other_total_diesel_amt = parseFloat(__other_total_diesel_amt);
+      }else{
+        __other_total_diesel_amt = 0;
+      }
+
+      let __other_gr_cash = $(".other_gr_cash[index-id='"+index_id+"']").val();
+      if(__other_gr_cash != ""){
+        __other_gr_cash = parseFloat(__other_gr_cash);
+      }else{
+        __other_gr_cash = 0;
+      }
+
+      
+      let __total_adv = __gr_rate_total + __other_total_diesel_amt + __other_gr_cash;
+      //console.log(extra,gr_diesel_amount)
+      
+      $(".other_gr_total_adv[index-id='"+index_id+"']").val(__total_adv);
+
+      $(".other_gr_total_adv").each(function(){
+        let __index_id = $(this).attr("index-id");
+        let tt_avd = [];
+        for(let j = __index_id; j >= 0; j--){
+          if($(".other_gr_total_adv[index-id='"+j+"']").length > 0){
+            let other_gr_total_adv = $(".other_gr_total_adv[index-id='"+j+"']").val();
+            if(other_gr_total_adv != ""){
+              other_gr_total_adv = parseFloat(other_gr_total_adv);
+            }else{
+              other_gr_total_adv = 0;
+            }
+            let gr_deducation = $(".gr_deducation[index-id='"+j+"']").val();
+            if(gr_deducation != ""){
+              gr_deducation = parseFloat(gr_deducation);
+            }else{
+              gr_deducation = 0;
+            }
+            let gr_net_payment = $(".gr_net_payment[index-id='"+j+"']").val();
+
+            if(gr_net_payment != ""){
+              gr_net_payment = parseFloat(gr_net_payment);
+            }else{
+              gr_net_payment = 0;
+            }
+            let sum_total = other_gr_total_adv + gr_deducation + gr_net_payment;
+            tt_avd.push(sum_total);
+          }
+          
+        }
+
+        let sum_tt_adv = tt_avd.reduce((a, b) => a + b, 0);
+        
+        let cal_balance = parseFloat($("#hul_amount").val()) - sum_tt_adv;
+
+        $(".gr_balance_amt[index-id='"+index_id+"']").val(cal_balance);
+        
+      })
+
+    }, 500));
     
 
   })
